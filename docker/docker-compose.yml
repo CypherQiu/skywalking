@@ -25,6 +25,7 @@ services:
       - 9300:9300
     environment:
       discovery.type: single-node
+      TZ: Asia/Shanghai
     ulimits:
       memlock:
         soft: -1
@@ -43,6 +44,7 @@ services:
     environment:
       SW_STORAGE: elasticsearch
       SW_STORAGE_ES_CLUSTER_NODES: elasticsearch:9200
+      TZ: Asia/Shanghai
   ui:
     image: skywalking/ui
     container_name: ui
@@ -55,3 +57,4 @@ services:
       - 8080:8080
     environment:
       SW_OAP_ADDRESS: oap:12800
+      TZ: Asia/Shanghai
